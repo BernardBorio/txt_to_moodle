@@ -23,6 +23,9 @@ for line in input_file:
     elif line[0] == '-':
         wrong_answer = line[1:]
         output_file.write(f"\t~[moodle]{wrong_answer}")
+    elif line[0] == '#':
+        feedback = line[1:]
+        output_file.write(f"\t####[moodle]{feedback}")
     elif line[0] == '%':
         output_file.write("}\n\n")
         score = -1
