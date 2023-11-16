@@ -1,18 +1,32 @@
+import os
+
 input_file = open("input.txt", "r", encoding='utf-8')
-output_file = open("domane.txt", "w", encoding='utf-8')
+output_file = open("domande.txt", "w", encoding='utf-8')
 
 score = -1
 counter = 1
+line_counter = 0
+separator = True
 for line in input_file:
+    line_counter += 1
     if line[0] == '_':
-        line = line.strip()
-        question = line[1:-1]
-        n_corr = int(line[-1])
-        if n_corr > 1:
-            score = 100/n_corr
-        output_file.write(f"// question: {counter}  name: {question}\n")
-        output_file.write(f"::{question}::[html]<p><strong>{question}</strong></p>"+'{\n')
-        counter += 1
+        if separator:
+            separator = False
+            line = line.strip()
+            question = line[1:-1]
+            if question[-1] == ':':
+                question = question + " "
+            n_corr = int(line[-1])
+            if n_corr > 1:
+                score = 100/n_corr
+            output_file.write(f"// question: {counter}  name: {question}\n")
+            output_file.write(f"::{question}::[html]<p><strong>{question}</strong></p>"+'{\n')
+            counter += 1
+        else:
+            print(f"Errore: separatore mancante prima della linea: {line_counter}")
+            output_file.close()
+            os.remove("domande.txt")
+            break
     elif line[0] == '*':
         correct_answer = line[1:]
         if score != -1:
@@ -26,7 +40,21 @@ for line in input_file:
     elif line[0] == '#':
         feedback = line[1:]
         output_file.write(f"\t####[moodle]{feedback}")
+    elif line[0] == '+':
+        answer = line[1]
+        if answer == 'T':
+            output_file.write(f"TRUE\n")
+        elif answer == 'F':
+            output_file.write(f"FALSE\n")
+        else:
+            print()
     elif line[0] == '%':
         output_file.write("}\n\n")
+        separator = True
         score = -1
+    else:
+        if len(line.strip()) > 0:
+            print(f"Errore nella formattazione del file alla linea {line_counter}\n\t{line}")
+            os.remove("domande.txt")
+            break
 
