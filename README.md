@@ -25,8 +25,8 @@ ___
 In this case you still have to put 1 at the end of the question. Under that, you have to put "+" and then _**"T"**_ if the answer is True or _**F**_ if the answer is false.
 
 ___
-## Free text answer.
-In this case, just put "0" at the end of the question.
+## Free text answer
+In this case, just put "0" at the end of the question and no answers.
 
 ___
 
