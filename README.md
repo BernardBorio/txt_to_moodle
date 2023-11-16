@@ -30,4 +30,8 @@ In this case, just put "0" at the end of the question and no answers.
 
 ___
 
+## Feedback
+To add custom feedback for a question, place it like a normal answer, but put "#" instad of "*" or "-" before it.
+___
+
 Look at the "input.txt" file to have an example. 
