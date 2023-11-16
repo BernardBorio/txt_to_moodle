@@ -1,0 +1,18 @@
+_Quale è la definizione di sicurezza informatica?3
+*È l' insieme dei prodotti, dei servizi, delle regole organizzative e dei comportamenti individuali che proteggono i sistemi informatici di un'azienda.
+*È la roccaforte delle nostre informazioni più preziose, fungendo da corrispettivo delle serrature, combinazioni e chiavi che sono essenziali per la loro protezione.
+*È il sistema che si occupa di proteggere le risorse da accessi indesiderati, garantendo la riservatezza delle informazioni, assicurando il funzionamento e la disponibilità dei servizi a fronte di eventi imprevedibili (C.I.A.: Confidentiality, Integrity, Availability).
+-La sicurezza informatica riguarda principalmente l'uso di antivirus per proteggere il tuo computer dagli hacker.
+-La sicurezza informatica si riferisce al processo di proteggere i tuoi dati sensibili archiviandoli su un disco rigido esterno e nascondendolo in un luogo segreto.
+-La sicurezza informatica è il processo di creare password complesse, che contengono il massimo numero di caratteri speciali possibili.
+
+%
+
+_Quali sono i principali attori relativi alla sicurezza informatica?1
+-Amministratori e Utenti interni ad un'organizzazione, che per vari motivi potrebbero fare spionaggio.
+-La criminalità organizzata.
+-Singoli individui con obiettivi ben precisi, come anche etici (attivisti, ambientalisti).
+-Gli stati.
+*Tutte le altre.
+
+%
