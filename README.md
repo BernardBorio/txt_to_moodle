@@ -7,6 +7,7 @@ There are some syntax rules to be respected for it to work. In particular, every
 - end with a number that represents the amount of correct answers.
 - correct answers must start with a **"*"** (star) character;
 - wrong answer must start with a **"-"** (minus) character;
+- do _**NOT**_ insert "=" (equals) in the text of a question or an answer
 
 ___
 
