@@ -16,6 +16,8 @@ for line in input_file:
             question = line[1:-1]
             if question[-1] == ':':
                 question = question + " "
+            if not line[-1].isdigit():
+                print(f"Error, number of correct answers missing at the line: {line_counter}")
             n_corr = int(line[-1])
             if n_corr > 1:
                 score = 100/n_corr
@@ -23,7 +25,7 @@ for line in input_file:
             output_file.write(f"::{question}::[html]<p><strong>{question}</strong></p>"+'{\n')
             counter += 1
         else:
-            print(f"Errore: separatore mancante prima della linea: {line_counter}")
+            print(f"Error, missing separator before line: {line_counter}")
             output_file.close()
             os.remove("domande.txt")
             break
@@ -54,7 +56,7 @@ for line in input_file:
         score = -1
     else:
         if len(line.strip()) > 0:
-            print(f"Errore nella formattazione del file alla linea {line_counter}\n\t{line}")
+            print(f"Error formatting the line file {line_counter}\n\t{line}")
             os.remove("domande.txt")
             break
 
