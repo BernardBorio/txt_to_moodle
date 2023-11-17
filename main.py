@@ -40,8 +40,7 @@ for line in input_file:
     elif line[0] == '*':                # right answer case
         correct_answer = line[1:]
         if score != -1:
-            output_file.write(f"\t~%{score:.5f}%[moodle]")
-            output_file.write(f"{correct_answer}")
+            output_file.write(f"\t~%{score:.5f}%[moodle]{correct_answer}")
         else:
             output_file.write(f"\t=[moodle]{correct_answer}")
 
@@ -56,9 +55,9 @@ for line in input_file:
     elif line[0] == '+':                # t/f answer case
         answer = line[1]
         if answer == 'T':
-            output_file.write(f"TRUE\n")
+            output_file.write(f"\tTRUE\n")
         elif answer == 'F':
-            output_file.write(f"FALSE\n")
+            output_file.write(f"\tFALSE\n")
         else:
             print()
 
