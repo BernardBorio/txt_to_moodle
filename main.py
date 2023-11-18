@@ -4,8 +4,10 @@ input_file = open("input.txt", "r", encoding='utf-8')
 output_file = open("domande.txt", "w", encoding='utf-8')
 
 score = -1
-counter = 1
+counter = 0
 line_counter = 0
+sep_counter = 0
+
 separator = True
 for line in input_file:
     line_counter += 1
@@ -14,6 +16,7 @@ for line in input_file:
             separator = False           # set separator to False for future checks
             line = line.strip()
             question = line[1:-1]
+            counter += 1
 
             if question[-1] == ':':     # add a space if there's a : as last character to avoid import errors
                 question = question + " "
@@ -29,7 +32,6 @@ for line in input_file:
                 score = 100 / n_corr
             output_file.write(f"// question: {counter}  name: {question}\n")
             output_file.write(f"::{question}::[html]<p><strong>{question}</strong></p>" + '{\n')
-            counter += 1
 
         else:
             print(f"Error, missing separator before line: {line_counter}")
@@ -62,6 +64,7 @@ for line in input_file:
             print()
 
     elif line[0] == '%':                # end of question case
+        sep_counter += 1
         output_file.write("}\n\n")
         separator = True
         score = -1
@@ -71,3 +74,11 @@ for line in input_file:
             print(f"Error formatting the line file {line_counter}\n\t{line}")
             os.remove("domande.txt")
             break
+
+
+if sep_counter != counter:
+    print(f"You missed the last separator")
+    output_file.close()
+    os.remove("domande.txt")
+else:
+    print(f"You just created {counter} questions")
