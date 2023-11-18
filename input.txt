@@ -14,7 +14,7 @@ _Quali sono i principali attori relativi alla sicurezza informatica?1
 -La criminalità organizzata.
 @feedback 1
 -Singoli individui con obiettivi ben precisi, come anche etici (attivisti, ambientalisti).
-@feedbafk 2
+@feedback 2
 -Gli stati.
 @feedback 3
 *Tutte le altre.
