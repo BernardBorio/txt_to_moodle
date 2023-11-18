@@ -11,6 +11,12 @@ sep_counter = 0
 separator = True
 for line in input_file:
     line_counter += 1
+
+    if line.__contains__("="):
+        line = line.replace("=", "\\=")
+
+    print(line)
+
     if line[0] == '_':                  # question case
         if separator:                   # check if there is a separator before current question
             separator = False           # set separator to False for future checks
@@ -72,6 +78,7 @@ for line in input_file:
     else:
         if len(line.strip()) > 0:       # case of formatting error, only if not empty line
             print(f"Error formatting the line file {line_counter}\n\t{line}")
+            output_file.close()
             os.remove("domande.txt")
             break
 
