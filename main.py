@@ -15,8 +15,6 @@ for line in input_file:
     if line.__contains__("="):
         line = line.replace("=", "\\=")
 
-    print(line)
-
     if line[0] == '_':                  # question case
         if separator:                   # check if there is a separator before current question
             separator = False           # set separator to False for future checks
@@ -59,6 +57,10 @@ for line in input_file:
     elif line[0] == '#':                # feedback answer case
         feedback = line[1:]
         output_file.write(f"\t####[moodle]{feedback}")
+
+    elif line[0] == '@':
+        feedback = line[1:]
+        output_file.write(f"\t#[moodle]{feedback}")
 
     elif line[0] == '+':                # t/f answer case
         answer = line[1]
