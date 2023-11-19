@@ -7,6 +7,8 @@ score = -1
 counter = 0
 line_counter = 0
 sep_counter = 0
+inSpecificFeedback = False
+inGenericFeedback = False
 
 separator = True
 for line in input_file:
@@ -16,6 +18,8 @@ for line in input_file:
         line = line.replace("=", "\\=")
 
     if line[0] == '_':                  # question case
+        inSpecificFeedback = False
+        inGenericFeedback = False
         if separator:                   # check if there is a separator before current question
             separator = False           # set separator to False for future checks
             line = line.strip()
@@ -44,6 +48,8 @@ for line in input_file:
             break
 
     elif line[0] == '*':                # right answer case
+        inSpecificFeedback = False
+        inGenericFeedback = False
         correct_answer = line[1:]
         if score != -1:
             output_file.write(f"\t~%{score:.5f}%[moodle]{correct_answer}")
@@ -51,18 +57,32 @@ for line in input_file:
             output_file.write(f"\t=[moodle]{correct_answer}")
 
     elif line[0] == '-':                # wrong answer case
+        inSpecificFeedback = False
+        inGenericFeedback = False
         wrong_answer = line[1:]
         output_file.write(f"\t~[moodle]{wrong_answer}")
 
     elif line[0] == '#':                # feedback answer case
         feedback = line[1:]
-        output_file.write(f"\t####[moodle]{feedback}")
+        inSpecificFeedback = False
+        if not inGenericFeedback:
+            output_file.write(f"\t####[moodle]{feedback}")
+            inGenericFeedback = True
+        else:
+            output_file.write(f"\t{feedback}")
 
     elif line[0] == '@':
         feedback = line[1:]
-        output_file.write(f"\t#[moodle]{feedback}")
+        inGenericFeedback = False
+        if not inSpecificFeedback:
+            output_file.write(f"\t#[moodle]{feedback}")
+            inSpecificFeedback = True
+        else:
+            output_file.write(f"\t{feedback}")
 
     elif line[0] == '+':                # t/f answer case
+        inSpecificFeedback = False
+        inGenericFeedback = False
         answer = line[1]
         if answer == 'T':
             output_file.write(f"\tTRUE\n")
@@ -72,6 +92,8 @@ for line in input_file:
             print()
 
     elif line[0] == '%':                # end of question case
+        inSpecificFeedback = False
+        inGenericFeedback = False
         sep_counter += 1
         output_file.write("}\n\n")
         separator = True

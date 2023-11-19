@@ -12,13 +12,17 @@ _Quale è la definizione di sicurezza informatica?3
 _Quali sono i principali attori relativi alla sicurezza informatica?1
 -Amministratori e Utenti interni ad un'organizzazione, che per vari motivi potrebbero fare spionaggio.
 -La criminalità organizzata.
-@feedback 1
+@feedback 1\n prova nuova linea
+#feedback 1.2
+@feedback 1.3
 -Singoli individui con obiettivi ben precisi, come anche etici (attivisti, ambientalisti).
-@feedback 2
+@feedback 2\n prova nuova linea
 -Gli stati.
-@feedback 3
+@feedback 3\n prova nuova linea
 *Tutte le altre.
+@feedback 4
 #feedback generale
+#feedback generale 2
 
 %
 

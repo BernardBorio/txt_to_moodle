@@ -33,7 +33,9 @@ ___
 ## Feedback
 To add general feedback for a question, place it like a normal answer, but put "#" instad of "*" or "-" before it.
 
-If you want to add a feedback for a specific answer, use "@" instead of "#" and place it right after the selected answer.
+If you want to add a feedback for a specific answer, use "@" instead of "#" and place it in a new line right after the selected answer.
+
+If you want to insert a feedback on multiple lines, write "\n" or go to a new line and write again the same symbol ("@" or "#") before the text. 
 ___
 
 Look at the "input.txt" file to have an example. 
