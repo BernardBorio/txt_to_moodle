@@ -5,6 +5,10 @@ from tkinter import filedialog
 def main():
     file_path = filedialog.askopenfilename()
 
+    if not os.path.exists(file_path):
+        print("Error, file not found")
+        return
+
     input_file = open(file_path, "r", encoding='utf-8-sig')
     output_file = open("domande.txt", "w", encoding='utf-8-sig')
 
