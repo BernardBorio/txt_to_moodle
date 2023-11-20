@@ -1,7 +1,10 @@
 import os
+from tkinter import filedialog
 
-input_file = open("input.txt", "r", encoding='utf-8')
-output_file = open("domande.txt", "w", encoding='utf-8')
+file_path = filedialog.askopenfilename()
+
+input_file = open(file_path, "r", encoding='utf-8-sig')
+output_file = open("domande.txt", "w", encoding='utf-8-sig')
 
 score = -1
 counter = 0
