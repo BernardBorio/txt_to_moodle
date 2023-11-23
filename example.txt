@@ -34,3 +34,18 @@ _L'aumento della complessità del sistema informatico mondiale e della varietà 
 _Prova domanda a risposta aperta:0
 
 %
+
+_Quali sono le principali categorie di attacco utilizzate ?5
+*Hacking
+*Malware
+*DoS
+*Social
+*Fisici
+-Crime as a Service
+-Money Mule
+-Malware as a Service
+-Attacchi forza bruta
+-Crack di software con licenza
+#Vedi <a href='https://drive.google.com/file/d/1sbU3aKgABTqT7MTfUA0Iw0_691qKGjFr/view?usp=sharing' target='_blank'>Report Verizon</a>.
+
+%

@@ -26,6 +26,10 @@ def main():
 
         if line.__contains__("="):
             line = line.replace("=", "\\=")
+        if line.__contains__("{"):
+            line = line.replace("{", "\\{")
+        if line.__contains__("}"):
+            line = line.replace("}", "\\}")
 
         if line[0] == '_':  # question case
             inSpecificFeedback = False
