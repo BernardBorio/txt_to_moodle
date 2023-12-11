@@ -30,6 +30,11 @@ In this case, just put "0" at the end of the question and no answers.
 
 ___
 
+## Matching question
+In this case, you have to put 1 as the number of the correct answers at the end of the question. After that, you have to put the answers, one per line, starting with a "*". Then, you have to separate the key to the value with an arrow operator "->".
+
+___
+
 ## Feedback
 To add general feedback for a question, place it like a normal answer, but put "#" instad of "*" or "-" before it.
 

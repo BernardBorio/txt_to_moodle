@@ -10,7 +10,7 @@ def main():
         return
 
     input_file = open(file_path, "r", encoding='utf-8-sig')
-    output_file = open("domande.txt", "w", encoding='utf-8-sig')
+    output_file = open(f"{file_path.split('.')[0]}_output.txt", "w", encoding='utf-8-sig')
 
     score = -1
     counter = 0
