@@ -62,6 +62,9 @@ def main():
                 output_file.close()
                 os.remove("domande.txt")
                 break
+        elif line[0] == '$':
+            category = line[1:]
+            output_file.write(f"$CATEGORY: top/Default per {category}\n\n")
 
         elif line[0] == '*':  # right answer case
             inSpecificFeedback = False
