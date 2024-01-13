@@ -48,7 +48,7 @@ def main():
                     print(f"Error, number of correct answers missing at the line: {line_counter}")
                     error = True
                     output_file.close()
-                    os.remove("domande.txt")
+                    os.remove(output_file.name)
                     break
                 n_corr = int(line[-1])
 
@@ -66,7 +66,7 @@ def main():
                 print(f"Error, missing separator before line: {line_counter}")
                 error = True
                 output_file.close()
-                os.remove("domande.txt")
+                os.remove(output_file.name)
                 break
         elif line[0] == '$':
             tags = line[1:].strip().split(",")
@@ -130,14 +130,14 @@ def main():
                 print(f"Error: missing symbol indicator at line {line_counter}\n\t{line}")
                 error = True
                 output_file.close()
-                os.remove("domande.txt")
+                os.remove(output_file.name)
                 break
 
     if not error:
         if sep_counter != counter:
             print(f"You missed the last separator")
             output_file.close()
-            os.remove("domande.txt")
+            os.remove(output_file.name)
         else:
             print(f"You just created {counter} questions")
 
