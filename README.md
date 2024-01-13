@@ -43,6 +43,12 @@ If you want to add a feedback for a specific answer, use "@" instead of "#" and 
 If you want to insert a feedback on multiple lines, write "\n" or go to a new line and write again the same symbol ("@" or "#") before the text.
 
 If you want to add a link in the feedback, add the "a" html tag.
+
+___
+
+## Tags
+To add tags to a question, write them in a new line before the question, starting with a "$" character. You can add multiple tags, separating them with a comma.
+Tags will be applied to all the following questions, until you put a new tag line. To remove tags, just put a new tag line with no tags.
 ___
 
 Look at the "example.txt" file to have an example. 

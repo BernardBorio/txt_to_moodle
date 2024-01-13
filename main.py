@@ -16,6 +16,7 @@ def main():
     counter = 0
     line_counter = 0
     sep_counter = 0
+    tags = []
     inSpecificFeedback = False
     inGenericFeedback = False
     error = False
@@ -54,6 +55,11 @@ def main():
                 if n_corr > 1:  # divide the score by the number of correct answers
                     score = 100 / n_corr
                 output_file.write(f"// question: {counter}  name: {question}\n")
+                if len(tags) > 0:
+                    output_file.write("// ")
+                    for tag in tags:
+                        output_file.write(f"[tag:{tag}] ")
+                    output_file.write("\n")
                 output_file.write(f"::{question}::[html]<p><strong>{question}</strong></p>" + '{\n')
 
             else:
@@ -63,8 +69,8 @@ def main():
                 os.remove("domande.txt")
                 break
         elif line[0] == '$':
-            category = line[1:]
-            output_file.write(f"$CATEGORY: top/Default per {category}\n\n")
+            tags = line[1:].strip().split(",")
+            tags = list(filter(lambda t: t != "", tags))
 
         elif line[0] == '*':  # right answer case
             inSpecificFeedback = False
